@@ -1,6 +1,6 @@
 {
   "name": "clasp-token-action",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This sets token for clasp so we can use it to push files to app script",
   "main": "index.js",
   "scripts": {

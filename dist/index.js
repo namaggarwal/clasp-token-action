@@ -62,7 +62,9 @@ async function run() {
   const refreshToken = core.getInput('refresh-token');
   const claspJSON = getClaspJSON(clientID, clientSecret, refreshToken);
   try{
-    fs.writeFile(".clasprc.json",JSON.stringify(claspJSON))
+    fs.writeFile(".clasprc.json",JSON.stringify(claspJSON), error => {
+      if(error) core.setFailed(error.message);
+    })
   }catch(error) {
     core.setFailed(error.message);
   }

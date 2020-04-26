@@ -55,6 +55,7 @@ module.exports = require("os");
 
 const fs = __webpack_require__(747);
 const core = __webpack_require__(470);
+const homeDir = __webpack_require__(87).homedir();
 
 async function run() {
   const clientID = core.getInput('client-id');
@@ -62,7 +63,7 @@ async function run() {
   const refreshToken = core.getInput('refresh-token');
   const claspJSON = getClaspJSON(clientID, clientSecret, refreshToken);
   try{
-    fs.writeFile(".clasprc.json",JSON.stringify(claspJSON), error => {
+    fs.writeFile(__webpack_require__(622).join(homeDir,'.clasprc.json'),JSON.stringify(claspJSON), error => {
       if(error) core.setFailed(error.message);
     })
   }catch(error) {

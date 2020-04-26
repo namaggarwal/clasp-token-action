@@ -1,5 +1,6 @@
 const fs = require('fs');
 const core = require('@actions/core');
+const homeDir = require('os').homedir();
 
 async function run() {
   const clientID = core.getInput('client-id');
@@ -7,7 +8,7 @@ async function run() {
   const refreshToken = core.getInput('refresh-token');
   const claspJSON = getClaspJSON(clientID, clientSecret, refreshToken);
   try{
-    fs.writeFile(".clasprc.json",JSON.stringify(claspJSON), error => {
+    fs.writeFile(require('path').join(homeDir,'.clasprc.json'),JSON.stringify(claspJSON), error => {
       if(error) core.setFailed(error.message);
     })
   }catch(error) {

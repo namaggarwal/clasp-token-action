@@ -11,7 +11,7 @@ inputs:
     description: 'Refresh token to get new access token'
     required: true
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'file-plus'

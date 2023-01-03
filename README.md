@@ -49,7 +49,7 @@ cat ~/.clasprc.json
 ## Example usage
 
 ```
-uses: namaggarwal/clasp-token-action@v0.0.1
+uses: namaggarwal/clasp-token-action@v0.0.2
 with:
   client-id: test-client-id
   client-secret: test-client-secret
@@ -62,7 +62,7 @@ package.json
 ```
 {
   "name": "my-project",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "script": {
     "push-to-app": "clasp push"
   }
